@@ -19,8 +19,8 @@ body{
     color: #fff;
 }
 #header{
-    width: 100%;
-    height: 50vh;
+    width: 50%;
+    height: 20vh;
     
 }
 .container{
@@ -48,12 +48,19 @@ nav .fa-solid{
     display: none;
 }
 .header-text{
+    width: 100%;
+    height: 40vh;
+    margin-left:10% ;
+    
+}
+
+.header-text{
     margin-top: 10%;
     font-size: 30px;
 }
 .header-text h1{
-    font-size: 60px;
-    margin-top: 20px;
+    font-size: 50px;
+    margin-top: 10px;
 }
 .header-text h1 span{
     color: #37dffc;
@@ -68,7 +75,7 @@ nav .fa-solid{
 }
 .about-col-1 img{
     width: 30%;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 .about-col-2{
     font-size: 18px;
@@ -141,7 +148,7 @@ nav .fa-solid{
     color: #fff;
     
 }
-.copyright{
+footer{
     width: 100%;
     text-align: center;
     padding: 25px 0;
@@ -168,6 +175,9 @@ nav .fa-solid{
                 </ul>
                
             </nav>
+               </div>
+    </div>
+
             <div class="header-text">
                 <p>Web Developer & Designer</p>
                 <h1>
@@ -175,15 +185,15 @@ nav .fa-solid{
                     From Trichy
                 </h1>
             </div>
-        </div>
-    </div>
+     
 
     <!-- About section -->
     <div id="about">
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="kess.png" >
+                    <img src="kess.png" alt="Profile Picture"
+     height="20%">
                 <div class="about-col-2">
                     <h4 class="sub-title">About Me</h4>
                     <p>
@@ -262,27 +272,27 @@ Feel free to connect with me if you have any exciting opportunities or simply wa
                 
             </div>
         </div>
-        <div class="copyright">
-            <p>Copyright ©️ Kesava. Made by Kesavanath B</a></p>
-        </div>
     </div>
-
+<footer>
+                <p>Copyright ©️ by Kesava. Made by Kesavanath B</a></p>
+        
+</footer>
     <script>
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click',function(e){
+                e.preventDefault();
 
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
 
-        function opentab(tabname) {
-            for (tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-            for (tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-
+                if(targetElement){
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 
 </body>
